@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran Toko Nero</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .qr-container img {
+            width: 200px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .qr-container img:hover {
+            transform: scale(1.05);
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        .pay-list {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .pay-list div {
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .pay-list strong {
+            display: block;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Pembayaran Toko Nero</h1>
+        
+        <div class="qr-container">
+            <img id="qrisImg" src="Screenshot_20250814_062815.jpg" alt="QRIS Toko Nero" onclick="zoomQRIS()">
+            <br>
+            <a href="Screenshot_20250814_062815.jpg" download class="btn">Unduh QRIS</a>
+        </div>
+
+        <div class="pay-list">
+            <div>
+                <strong>DANA</strong>
+                <span>087859803568</span>
+            </div>
+            <div>
+                <strong>OVO</strong>
+                <span>087859803568</span>
+            </div>
+            <div>
+                <strong>GoPay</strong>
+                <span>087859803568</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function zoomQRIS() {
+            let img = document.getElementById('qrisImg');
+            let newWindow = window.open("");
+            newWindow.document.write("<img src='" + img.src + "' style='width:100%'>");
+        }
+    </script>
+
+</body>
+</html>
