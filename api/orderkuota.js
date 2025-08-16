@@ -112,7 +112,7 @@ function convertCRC16(str) {
 }
 
 function generateTransactionId() {
-  return `SKYZOPEDIA-${crypto.randomBytes(2).toString('hex').toUpperCase()}`;
+  return `YAZXZPEDIA-${crypto.randomBytes(2).toString('hex').toUpperCase()}`;
 }
 
 function generateExpirationTime() {
