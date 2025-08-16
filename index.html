@@ -886,7 +886,7 @@ font-weight: 600;
   <header class="navbar">
     <div class="navbar-container">
       <div class="navbar-left">
-        <span id="navname" class="brand">X-Skycode</span>
+        <span id="navname" class="brand">-Yazxzcode</span>
       </div>
       <div class="navbar-right">
         <button id="themeToggle" class="nav-icon" aria-label="Toggle Theme">
@@ -942,7 +942,7 @@ font-weight: 600;
       <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
       <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
     </div>
-    <p>&copy; <span id="currentYear"></span> X-Skycode. All rights reserved.</p>
+    <p>&copy; <span id="currentYear"></span> -Yazxzcode. All rights reserved.</p>
   </footer>
 
 <script>
@@ -1040,7 +1040,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     apis = await apisResponse.json();
 
-    document.getElementById("navname").textContent = settings.creatorName || "X-Skycode";
+    document.getElementById("navname").textContent = settings.creatorName || "-Yazxzcode";
     document.getElementById("apiTitle").textContent = settings.apiTitle || "Selfbot API's";
     document.querySelector('footer .contact a[aria-label="WhatsApp"]').href = settings.whatsappLink || "https://wa.me/yourwhatsapplink";
     document.querySelector('footer .contact a[aria-label="GitHub"]').href = settings.githubLink || "#";
@@ -1055,7 +1055,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   } catch (err) {
     console.error("Error loading API settings or endpoints:", err);
     document.getElementById("page").textContent = "API Documentation (Error)";
-    document.getElementById("navname").textContent = "X-Skycode";
+    document.getElementById("navname").textContent = "-Yazxzcode";
     document.getElementById("apiTitle").textContent = "Selfbot API's";
     apiList.innerHTML = `<p style="text-align: center; color: var(--danger); margin-top: 2rem;">
                            Failed to load API documentation: <br> <strong>${err.message}</strong> <br>
