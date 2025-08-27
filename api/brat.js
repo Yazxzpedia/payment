@@ -8,7 +8,7 @@ module.exports = {
     if (!global.apikey.includes(apikey)) return res.json({ status: false, error: 'Apikey invalid' });
     if (!text) return res.json({ status: false, error: 'Missing text' });
 
-    const buffer = await getBuffer(`https://fastrestapis.fasturl.cloud/maker/brat/animated?text=${encodeURIComponent(text)}&mode=image`);
+    const buffer = await getBuffer(`https://api.nvidiabotz.xyz/imagecreator/brat?text=text`);
     res.writeHead(200, {
       'Content-Type': 'image/gif',
       'Content-Length': buffer.length,
