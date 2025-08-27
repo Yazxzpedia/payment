@@ -15,7 +15,7 @@ module.exports = {
         return res.json({ status: false, error: 'Text parameter is required' });
       }
 
-      const buffer = await getBuffer(`https://fastrestapis.fasturl.cloud/maker/brat/animated?text=${encodeURIComponent(text)}&mode=animated`);
+      const buffer = await getBuffer(`https://xskycodes-apis.vercel.app/imagecreator/bratvid?apikey=sky&text=${text}`);
 
       res.writeHead(200, {
         'Content-Type': 'image/gif',
