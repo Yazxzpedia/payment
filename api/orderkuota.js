@@ -6,7 +6,7 @@ const { ImageUploadService } = require('node-upload-images');
 
 module.exports = {
   name: "Mutasi QRIS",
-  desc: "Cek mutasi QRIS via NvidiaBotz API",
+  desc: "Cek mutasi QRIS",
   category: "Orderkuota",
   path: "/orderkuota/mutasiqr?apikey=&username=&token=",
   async run(req, res) {
