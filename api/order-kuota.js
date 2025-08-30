@@ -188,26 +188,6 @@ module.exports = [
     }
   },
   {
-    name: "Cek Mutasi QRIS",
-    desc: "Cek Mutasi Qris Orderkuota",
-    category: "Orderkuota",
-    path: "/orderkuota/mutasiqr?apikey=&username=&token=",
-    async run(req, res) {
-      const { apikey, username, token } = req.query;
-      if (!global.apikey.includes(apikey)) return res.json({ status: false, error: 'Apikey invalid' });
-      if (!username) return res.json({ status: false, error: 'Missing username' });
-      if (!token) return res.json({ status: false, error: 'Missing token' });
-      try {
-        const ok = new OrderKuota(username, token);
-        let login = await ok.getTransactionQris();
-        login = login.qris_history.results.filter(e => e.status === "IN");
-        res.json({ status: true, result: login });
-      } catch (err) {
-        res.status(500).json({ status: false, error: err.message });
-      }
-    }
-  },
-  {
     name: "Cek Profile",
     desc: "Cek Profile Orderkuota",
     category: "Orderkuota",
