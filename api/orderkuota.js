@@ -147,7 +147,7 @@ async function createQRIS(amount, codeqr) {
   };
 }
 
-module.exports =   {
+module.exports = {
     name: "Cek Mutasi QRIS",
     desc: "Cek Mutasi Qris Orderkuota",
     category: "Orderkuota",
