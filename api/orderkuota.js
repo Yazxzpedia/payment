@@ -148,10 +148,10 @@ async function createQRIS(amount, codeqr) {
 }
 
 module.exports = {
-    name: "Cek Mutasi QRIS",
-    desc: "Cek Mutasi Qris Orderkuota",
-    category: "Orderkuota",
-    path: "/orderkuota/mutasiqr?apikey=&username=&token=",
+    name: "Cek Mutasi QRIS 1",
+    desc: "Cek Mutasi Qris Orderkuota 1",
+    category: "Orderkuota 1",
+    path: "/orderkuota/mutasi?apikey=&username=&token=",
     async run(req, res) {
       const { apikey, username, token } = req.query;
       if (!global.apikey.includes(apikey)) return res.json({ status: false, error: 'Apikey invalid' });
