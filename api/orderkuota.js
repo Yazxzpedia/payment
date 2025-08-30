@@ -147,21 +147,40 @@ async function createQRIS(amount, codeqr) {
   };
 }
 
-module.exports = {
-    name: "Cek Mutasi QRIS 1",
-    desc: "Cek Mutasi Qris Orderkuota 1",
-    category: "Orderkuota 1",
-    path: "/orderkuota/mutasi?apikey=&username=&token=",
+module.exports = [
+  {
+    name: "Get OTP",
+    desc: "Get OTP Orderkuota",
+    category: "Orderkuota",
+    path: "/orderkuota/getotp?apikey=&username=&password=",
     async run(req, res) {
-      const { apikey, username, token } = req.query;
+      const { apikey, username, password } = req.query;
       if (!global.apikey.includes(apikey)) return res.json({ status: false, error: 'Apikey invalid' });
       if (!username) return res.json({ status: false, error: 'Missing username' });
-      if (!token) return res.json({ status: false, error: 'Missing token' });
+      if (!password) return res.json({ status: false, error: 'Missing password' });
       try {
-        const ok = new OrderKuota(username, token);
-        let login = await ok.getTransactionQris();
-        login = login.qris_history.results.filter(e => e.status === "IN");
-        res.json({ status: true, result: login });
+        const ok = new OrderKuota();
+        const login = await ok.loginRequest(username, password);
+        res.json({ status: true, result: login.results });
+      } catch (err) {
+        res.status(500).json({ status: false, error: err.message });
+      }
+    }
+  },
+  {
+    name: "Get Token",
+    desc: "Get Token Orderkuota",
+    category: "Orderkuota",
+    path: "/orderkuota/gettoken?apikey=&username=&otp=",
+    async run(req, res) {
+      const { apikey, username, otp } = req.query;
+      if (!global.apikey.includes(apikey)) return res.json({ status: false, error: 'Apikey invalid' });
+      if (!username) return res.json({ status: false, error: 'Missing username' });
+      if (!otp) return res.json({ status: false, error: 'Missing otp' });
+      try {
+        const ok = new OrderKuota();
+        const login = await ok.getAuthToken(username, otp);
+        res.json({ status: true, result: login.results });
       } catch (err) {
         res.status(500).json({ status: false, error: err.message });
       }
@@ -201,3 +220,4 @@ module.exports = {
     }
   }
 };
+]
