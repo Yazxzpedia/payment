@@ -147,8 +147,7 @@ async function createQRIS(amount, codeqr) {
   };
 }
 
-module.exports = [
-  {
+module.exports = {
     name: "Get OTP",
     desc: "Get OTP Orderkuota",
     category: "Orderkuota",
@@ -220,4 +219,3 @@ module.exports = [
     }
   }
 };
-]
